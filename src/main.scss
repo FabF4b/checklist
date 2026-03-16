@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+:root {
+  --bg-gradient-clr-1: hsl(238, 20%, 30%);
+  --bg-gradient-clr-2: hsl(240, 27%, 20%);
+  --bg-gradient: radial-gradient(
+    circle at 50% 20%,
+    var(--bg-gradient-clr-1) 0%,
+    var(--bg-gradient-clr-2) 70%
+  );
+  --bg-clr-1: hsla(230, 25%, 77%, 0.3);
+  --bg-clr-2: hsla(230, 25%, 77%, 0.8);
+  --text-clr: hsl(0, 2%, 91%);
+  --warning-clr: hsla(0, 92%, 42%, 0.9);
+  --font-primary: "IBM Plex Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: var(--font-primary);
+  font-size: 1.3rem;
+  background: var(--bg-gradient);
+  background-size: cover;
+  background-position: top left;
+}

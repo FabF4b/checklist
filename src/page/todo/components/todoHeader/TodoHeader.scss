@@ -1,0 +1,28 @@
+.headerbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  & button {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in;
+  }
+
+  & svg {
+    stroke: hsl(238, 20%, 30%);
+  }
+
+  & button:hover {
+    color: var(--bg-clr-2);
+    background: var(--bg-clr-1);
+    border: 1px solid var(--bg-clr-1);
+  }
+
+  &:has(button:hover) svg {
+    stroke: var(--text-clr);
+  }
+}

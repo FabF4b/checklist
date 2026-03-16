@@ -1,0 +1,13 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-clr-2);
+  border-radius: 40px;
+  corner-shape: squircle;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}

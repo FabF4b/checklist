@@ -1,0 +1,44 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-clr-1);
+  border-radius: 40px;
+  corner-shape: squircle;
+  border: 1px solid transparent;
+  padding: 0.5rem;
+  box-shadow: 0px 10px 16px hsla(0, 0%, 0%, 0.2);
+  transition: all 0.3s ease-in-out;
+
+  & button,
+  svg {
+    fill: var(--bg-clr-1);
+    background: transparent;
+    border: 1px solid transparent;
+    margin-left: 0.3rem;
+    transition: all 0.2s ease-in;
+  }
+
+  & input {
+    transform: scale(2);
+  }
+
+  &:has(input:checked) {
+    background: transparent;
+    border: 1px solid var(--bg-clr-1);
+    box-shadow: unset;
+  }
+
+  &:has(input:checked) svg {
+    fill: var(--text-clr);
+    transform: scale(1.1);
+  }
+
+  & svg:hover {
+    fill: var(--warning-clr);
+  }
+
+  &:has(input:checked) svg:hover {
+    fill: var(--warning-clr);
+  }
+}

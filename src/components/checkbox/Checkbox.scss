@@ -1,0 +1,19 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+  accent-color: var(--bg-clr-2);
+}
+
+.label {
+  color: var(--text-clr);
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: var(--bg-clr-1);
+  text-decoration: line-through;
+}

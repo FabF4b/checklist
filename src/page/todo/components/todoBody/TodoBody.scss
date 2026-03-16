@@ -1,0 +1,12 @@
+.todo-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  & em {
+    font-size: 1.5rem;
+    color: var(--text-clr);
+    padding: 0 1rem;
+  }
+}
