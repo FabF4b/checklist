@@ -5,21 +5,39 @@
   padding: 0;
   box-sizing: border-box;
   font-family: inherit;
+  scrollbar-width: none;
 }
 
 :root {
-  --bg-gradient-clr-1: hsl(238, 20%, 30%);
-  --bg-gradient-clr-2: hsl(240, 27%, 20%);
+  --bg-gradient-clr-1: hsl(250, 15%, 25%);
+  --bg-gradient-clr-2: hsl(260, 10%, 15%);
   --bg-gradient: radial-gradient(
     circle at 50% 20%,
     var(--bg-gradient-clr-1) 0%,
     var(--bg-gradient-clr-2) 70%
   );
-  --bg-clr-1: hsla(230, 25%, 77%, 0.3);
-  --bg-clr-2: hsla(230, 25%, 77%, 0.8);
-  --text-clr: hsl(0, 2%, 91%);
+  --bg-clr-1: hsla(260, 25%, 77%, 0.3);
+  --bg-clr-2: hsla(250, 25%, 77%, 0.8);
+  --text-clr: hsl(0, 0%, 85%);
+  --hover-highlight: hsl(270, 25%, 70%);
   --warning-clr: hsla(0, 92%, 42%, 0.9);
+  --shadow: 0px 4px 10px hsla(0, 0%, 0%, 0.3);
   --font-primary: "IBM Plex Sans", sans-serif;
+}
+
+.lightmode {
+  --bg-gradient-clr-1: hsla(260, 20%, 65%, 0.4);
+  --bg-gradient-clr-2: hsla(250, 25%, 70%, 0.8);
+  --bg-gradient: radial-gradient(
+    circle at 50% 20%,
+    var(--bg-gradient-clr-1) 0%,
+    var(--bg-gradient-clr-2) 70%
+  );
+  --bg-clr-1: hsla(258, 10%, 55%, 0.25);
+  --bg-clr-2: hsla(251, 15%, 65%, 0.7);
+  --text-clr: hsl(0, 2%, 19%);
+  --hover-highlight: hsl(270, 4%, 41%);
+  --shadow: 0px 4px 10px hsla(0, 0%, 25%, 0.4);
 }
 
 body {
@@ -29,5 +47,6 @@ body {
   align-items: flex-start;
   font-family: var(--font-primary);
   font-size: 1.3rem;
+  color: var(--text-clr);
   background: var(--bg-gradient);
 }

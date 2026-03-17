@@ -1,6 +1,6 @@
 import Button from "../../../../components/button/Button";
 import Checkbox from "../../../../components/checkbox/Checkbox";
-import DeleteButtonIcon from "../../../../components/icon/DeleteIcon";
+import DeleteIcon from "../../../../components/icon/DeleteIcon";
 import "./TodoItem.scss";
 
 function TodoItem({ todoItem, handleClickCheckbox, deleteTodoFromList }) {
@@ -23,7 +23,7 @@ function TodoItem({ todoItem, handleClickCheckbox, deleteTodoFromList }) {
         handleClickCheckbox={handleClickCheckboxEvent}
       />
       <Button
-        icon={<DeleteButtonIcon />}
+        icon={<DeleteIcon />}
         text=""
         handleButtonClickEvent={handleDeleteTodo}
       />

@@ -1,15 +1,15 @@
 import "./Checkbox.scss";
 
-function Checkbox({ id, checked, content, handleClickCheckbox, className }) {
+function Checkbox({ id, checked, content, handleClickCheckbox }) {
   return (
-    <div class="checkbox">
+    <div className="checkbox">
       <input
         id={id}
         type="checkbox"
         checked={checked}
         onChange={handleClickCheckbox}
       />
-      <label class="label" for={id}>
+      <label className="label" for={id}>
         {content}
       </label>
     </div>

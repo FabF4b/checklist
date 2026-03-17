@@ -1,4 +1,4 @@
-function AddButtonIcon() {
+function AddIcon() {
   return (
     <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none">
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -30,4 +30,4 @@ function AddButtonIcon() {
   );
 }
 
-export default AddButtonIcon;
+export default AddIcon;

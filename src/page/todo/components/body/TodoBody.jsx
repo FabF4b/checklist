@@ -1,10 +1,10 @@
-import TodoItem from "../todoItem/TodoItem";
+import TodoItem from "../item/TodoItem";
 import "./TodoBody.scss";
 
 function TodoBody({ todos, handleClickCheckbox, deleteTodoFromList }) {
   function noTodoItems() {
     if (todos.length === 0) {
-      return <em>...keine offenen Todos!?</em>;
+      return <p>Done.</p>;
     }
   }
 

@@ -1,10 +1,13 @@
 .todo-body {
-  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 1rem;
+  overflow-y: auto;
+  user-select: none;
 
-  & em {
+  & p {
     font-size: 1.5rem;
     color: var(--text-clr);
     padding: 0 1rem;

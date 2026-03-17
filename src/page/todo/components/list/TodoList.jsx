@@ -1,18 +1,35 @@
-import TodoHeader from "../todoHeader/TodoHeader";
-import TodoBody from "../todoBody/TodoBody";
-import { useState } from "react";
+import TodoHeader from "../header/TodoHeader";
+import TodoBody from "../body/TodoBody";
+import ToggleModeButton from "../../../../components/button/toggleButton/ToggleButton";
+import { useState, useEffect } from "react";
+
 import "./TodoList.scss";
 
 function TodoList() {
-  const [todos, setTodos] = useState([
-    { id: Math.random(), content: "8 std. Hamsterrad", done: false },
-  ]);
+  const [todos, setTodos] = useState([]);
+
+  function loadFromLocalStorage() {
+    let savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      savedTodos = JSON.parse(savedTodos);
+    }
+    return savedTodos;
+  }
+
+  useEffect(() => {
+    const loadedTodos = loadFromLocalStorage();
+    setTodos(loadedTodos);
+  }, []);
 
   function handleClickCheckbox(todoItem) {
     const todoItemIndex = todos.findIndex((todo) => todo.id === todoItem.id);
     const updatedTodos = [...todos];
     updatedTodos.splice(todoItemIndex, 1, todoItem);
     setTodos(updatedTodos);
+  }
+
+  function saveToLocalStorage() {
+    localStorage.setItem("todos", JSON.stringify(todos));
   }
 
   function addTodoItemToList(todoItem) {
@@ -28,6 +45,10 @@ function TodoList() {
     setTodos(filteredTodos);
   }
 
+  function toggleTheme() {
+    document.body.classList.toggle("lightmode");
+  }
+
   return (
     <div className="todo-list">
       <TodoHeader addTodoItemToList={addTodoItemToList} />
@@ -36,6 +57,7 @@ function TodoList() {
         handleClickCheckbox={handleClickCheckbox}
         deleteTodoFromList={deleteTodoFromList}
       />
+      <ToggleModeButton toggleTheme={toggleTheme} />
     </div>
   );
 }

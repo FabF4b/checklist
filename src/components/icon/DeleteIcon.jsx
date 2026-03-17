@@ -1,4 +1,4 @@
-function DeleteButtonIcon() {
+function DeleteIcon() {
   return (
     <svg width="32px" height="32px" viewBox="0 0 1000 1000">
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -14,4 +14,4 @@ function DeleteButtonIcon() {
   );
 }
 
-export default DeleteButtonIcon;
+export default DeleteIcon;

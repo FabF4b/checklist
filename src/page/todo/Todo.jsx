@@ -1,4 +1,5 @@
-import TodoList from "./components/todoList/TodoList";
+import TodoList from "./components/list/TodoList";
+
 import "./Todo.scss";
 
 function Todo() {

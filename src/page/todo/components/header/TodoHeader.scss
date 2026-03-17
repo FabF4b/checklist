@@ -1,0 +1,40 @@
+.headerbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  & button {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    border: 1px solid var(--bg-clr-1);
+    transition: all 0.2s ease-in;
+  }
+
+  & input {
+    background: var(--bg-clr-2);
+    border: 1px solid var(--bg-clr-1);
+  }
+
+  & svg {
+    stroke: var(--text-clr);
+  }
+
+  & button:hover {
+    color: var(--bg-clr-2);
+    background: var(--bg-clr-1);
+    border: 1px solid var(--hover-highlight);
+  }
+
+  &:has(button:hover) svg {
+    stroke: var(--text-clr);
+  }
+}
