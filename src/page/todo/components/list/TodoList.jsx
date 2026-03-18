@@ -6,30 +6,20 @@ import { useState, useEffect } from "react";
 import "./TodoList.scss";
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
-
-  function loadFromLocalStorage() {
-    let savedTodos = localStorage.getItem("todos");
-    if (savedTodos) {
-      savedTodos = JSON.parse(savedTodos);
-    }
-    return savedTodos;
-  }
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
 
   useEffect(() => {
-    const loadedTodos = loadFromLocalStorage();
-    setTodos(loadedTodos);
-  }, []);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   function handleClickCheckbox(todoItem) {
     const todoItemIndex = todos.findIndex((todo) => todo.id === todoItem.id);
     const updatedTodos = [...todos];
     updatedTodos.splice(todoItemIndex, 1, todoItem);
     setTodos(updatedTodos);
-  }
-
-  function saveToLocalStorage() {
-    localStorage.setItem("todos", JSON.stringify(todos));
   }
 
   function addTodoItemToList(todoItem) {
