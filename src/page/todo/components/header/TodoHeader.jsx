@@ -12,7 +12,7 @@ function TodoHeader({ addTodoItemToList, saveToLocalStorage }) {
     setInputValue(event.target.value);
   }
   function handleAddTodoEvent() {
-    if (!inputValue) return;
+    if (inputValue.trim() === "") return;
     addTodoItemToList({ id: Math.random(), content: inputValue, done: false });
     setInputValue("");
   }
