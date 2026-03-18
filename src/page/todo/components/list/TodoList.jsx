@@ -15,6 +15,21 @@ function TodoList() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+  const [lightmode, setLightmode] = useState(() => {
+    const savedMode = localStorage.getItem("lightmode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("lightmode", JSON.stringify(lightmode));
+  }, [lightmode]);
+
+  useEffect(() => {
+    lightmode
+      ? document.body.classList.add("lightmode")
+      : document.body.classList.remove("lightmode");
+  }, [lightmode]);
+
   function handleClickCheckbox(todoItem) {
     const todoItemIndex = todos.findIndex((todo) => todo.id === todoItem.id);
     const updatedTodos = [...todos];
@@ -37,6 +52,7 @@ function TodoList() {
 
   function toggleTheme() {
     document.body.classList.toggle("lightmode");
+    setLightmode(!lightmode);
   }
 
   return (
