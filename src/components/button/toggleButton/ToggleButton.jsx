@@ -1,11 +1,12 @@
 import "./ToggleButton.scss";
 
-function ToggleModeButton({ toggleTheme }) {
+function ToggleModeButton({ toggleTheme, lightmode }) {
   return (
     <div class="container-toggle-button">
       <input
         class="input-toggle"
         onClick={toggleTheme}
+        checked={lightmode}
         type="checkbox"
         id="toggle"
       />

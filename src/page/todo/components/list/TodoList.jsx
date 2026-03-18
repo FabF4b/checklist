@@ -2,7 +2,6 @@ import TodoHeader from "../header/TodoHeader";
 import TodoBody from "../body/TodoBody";
 import ToggleModeButton from "../../../../components/button/toggleButton/ToggleButton";
 import { useState, useEffect } from "react";
-
 import "./TodoList.scss";
 
 function TodoList() {
@@ -63,7 +62,7 @@ function TodoList() {
         handleClickCheckbox={handleClickCheckbox}
         deleteTodoFromList={deleteTodoFromList}
       />
-      <ToggleModeButton toggleTheme={toggleTheme} />
+      <ToggleModeButton toggleTheme={toggleTheme} lightmode={lightmode} />
     </div>
   );
 }
